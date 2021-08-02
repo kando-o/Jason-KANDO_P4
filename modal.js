@@ -19,9 +19,9 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 function launchModal() {
   modalbg.style.display = "block";
 }
-// Close le BGround 
+// Close the BGround 
 close.addEventListener('click', () => {
   console.log('yes');
   modalbg.style.display = "none"
-  alert('Êtes vous sur de vouloir quitter')
+  // alert('Êtes vous sur de vouloir quitter')
 })
