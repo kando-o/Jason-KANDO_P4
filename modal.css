@@ -188,6 +188,14 @@ main {
   margin: 15px auto;
 }
 
+.modal-shadow-invalid{
+  box-shadow: red 4px 4px 5px;
+}
+
+.modal-shadow-valid{
+  box-shadow: green 4px 4px 5px;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
