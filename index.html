@@ -65,9 +65,8 @@
               
               <div
                 class="formData">
-                <label for="first">Prénom</label><br>
-                <input
-
+                <label for="first">Prénoms</label><br>
+                <input 
                   class="text-control"
                   type="text"
                   id="first"
@@ -75,6 +74,7 @@
                   required minlength="2"
                   pattern="[A-Za-z]+"
                 /><br>
+                <div class="error_first"></div>
               </div>
               <div
                 class="formData">
@@ -87,6 +87,8 @@
                   required minlength="2"
                   pattern="[A-Za-z]+"
                 /><br>
+                <div class="error_last"></div>
+
               </div>
               <div
                 class="formData">
@@ -98,6 +100,7 @@
                   name="email"
                   required minlength="2"
                 /><br>
+                <div class="error_email"></div>
               </div>
               <div
                 class="formData">
@@ -201,6 +204,8 @@
                   checked
                   required
                 />
+                <br>
+                <input class="checkbox-input" type="checkbox" id="checkbox1" checked/>
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
