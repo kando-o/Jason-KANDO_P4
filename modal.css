@@ -9,7 +9,6 @@
   padding: 0;
 }
 /* Landing Page */
-
 body {
   margin: 0;
   display: flex;
@@ -20,16 +19,13 @@ body {
   max-width: 1300px;
   margin: 0 auto;
 }
-
 p {
   margin-bottom: 0;
   padding: 0.5vw;
 }
-
 img {
   padding-right: 1rem;
 }
-
 .topnav {
   overflow: hidden;
   margin: 3.5%;
@@ -51,23 +47,19 @@ img {
   font-size: 20px;
   font-family: Roboto, sans-serif;
 }
-
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
 }
-
 .topnav .icon {
   display: none;
 }
-
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -75,7 +67,6 @@ img {
     display: block;
   }
 }
-
 @media screen and (max-width: 768px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -91,7 +82,6 @@ img {
 }
 
 
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -100,7 +90,6 @@ img {
     margin-top: -15px;
   }
 } 
-
 main {
   font-size: 130%;
   font-weight: bolder;
@@ -112,9 +101,7 @@ main {
   border-radius: 2rem;
   text-align: justify;
 
-
 }
-
 .modal-btn {
   font-size: 145%;
   background: #fe142f;
@@ -126,19 +113,15 @@ main {
   border-radius: 1rem;
   cursor: pointer;
 }
-
 .modal-btn:hover {
   background: #3876ac;
 }
-
 .footer {
   margin: 20px;
   padding: 10px;
   font-family: var(--font-slab);
 }
-
 /* Modal form */
-
 .button {
   background: #fe142f;
   margin-top: 0.5em;
@@ -148,15 +131,12 @@ main {
   cursor: pointer;
   font-size: 16px;
 }
-
 .button:hover {
   background: #3876ac;
 }
-
 .smFont {
   font-size: 16px;
 }
-
 .bground {
   display: none;
   position: fixed;
@@ -168,7 +148,6 @@ main {
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
 }
-
 .content {
   margin: 5% auto;
   width: 100%;
@@ -182,20 +161,16 @@ main {
   color: #fff;
   padding-top: 10px;
 }
-
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
 }
-
 .modal-shadow-invalid{
   box-shadow: red 4px 4px 5px;
 }
-
 .modal-shadow-valid{
   box-shadow: green 4px 4px 5px;
 }
-
 label {
   font-family: var(--font-default);
   font-size: 17px;
@@ -221,7 +196,6 @@ input {
   color: red;
   width: 100%;
   font-size: 20px;
-
 }
 .formData[data-error]::after {
   content: attr(data-error);
@@ -242,7 +216,6 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-
 input[data-error]::after {
     content: attr(data-error);
     font-size: 0.4em;
@@ -356,14 +329,12 @@ input[data-error]::after {
   font-size: 1.1rem;
   font-weight: normal;
 }
-
 .custom-select select {
   display: none;
 }
 .select-selected {
   background-color: #fff;
 }
-
 /* Style the arrow inside the select element: */
 .select-selected:after {
   position: absolute;
@@ -378,13 +349,11 @@ input[data-error]::after {
   transform: rotate(-48deg);
   border-radius: 5px 0 5px 0;
 }
-
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
   transform: rotate(135deg);
   top: 13px;
 }
-
 .select-items div,
 .select-selected {
   color: #000;
@@ -395,7 +364,6 @@ input[data-error]::after {
   border-radius: 8px;
   height: 48px;
 }
-
 /* Style items (options): */
 .select-items {
   position: absolute;
@@ -405,12 +373,10 @@ input[data-error]::after {
   right: 0;
   z-index: 99;
 }
-
 /* Hide the items when the select box is closed: */
 .select-hide {
   display: none;
 }
-
 .select-items div:hover,
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
@@ -532,7 +498,6 @@ footer {
     text-align: center;
   }
 }
-
 @media screen and (max-width: 550px) {
  .bground{
    padding: .5px 1.5rem
@@ -550,7 +515,6 @@ footer {
   .hero-headline{
     width: 70%;
     margin: 0;
-  
     font-size: 3.9rem ;
     text-align: left;
   }
@@ -559,16 +523,24 @@ footer {
     text-align: left;
   }
 }
-
 @media screen and  (max-width: 361px) {
   .bground{
     padding: .5px 1rem;
   }
-  .hero-text{
-    width: 70%;
+  .hero-content{
+    padding: 0;
   }
+  .hero-headline{
+    width: 70%;
+    font-size: 3.8rem;
+  }
+  .hero-text{
+    width: 64.7%;
+  }
+  .ajoutError{
+    font-size: 16px;
+    color: red;
 }
-
 @media screen and (max-width: 320px) {
   .checkbox-label:nth-child(8) {
   position: relative;
@@ -578,8 +550,8 @@ footer {
     position: relative;
     left: 18%;
   }
-}
-
+  }
+  
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -589,4 +561,3 @@ footer {
     opacity: 1;
   }
 }
-
