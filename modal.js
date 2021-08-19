@@ -21,7 +21,6 @@ const errorEmail = document.querySelector('.error_email')
 const div = document.createElement('div')
 const close = document.querySelector('.close');
 
-console.log(form[2]);
 // launch modal event
 // Fait apparaître le formulaire au click sur tout les *btn*
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -36,26 +35,7 @@ close.addEventListener('click', () => {
   alert('Etes vous sur')
   modalbg.style.display = "none"
 })
-
-            // Message d'erreur à voir
-
-// formData.forEach((data) => {
-  
-//   data.addEventListener('input', (e) => {
-//     data.setCustomValidity('');
-//     data.checkValidity()
-//   }) 
-//   data.addEventListener('invalid', (e) => {
-//     console.log(e.data.value);
-//     if(data.value === '') {
-//       data.setCustomValidity('Entre qlq chose')
-//     } else {
-//       data.setCustomValidity("Le format n'est pas bon")
-//     }
-//   }) 
-// })
 //            **************** Début formulaire Validation ****************
-
 // Modèle de configuration message d'erreur pour first
 first.addEventListener('input', () => {
   first.setCustomValidity('') /*Paramettre de la fonction setcustom actif à vide*/ 
@@ -64,7 +44,6 @@ first.addEventListener('input', () => {
 })
 
 form.addEventListener('click', () => {
-
   // Evenement de first invalid + Message d'erreur --> Ajout et suppression de classe
   first.addEventListener('invalid', () => {
     if(first.value === ''){
@@ -105,7 +84,7 @@ last.addEventListener('invalid', () => {
     // last.setCustomValidity(" Le format entré ici n'est pas bon veuillez ne mettre min 2 lettres et seuleument que des lettres miniscules et majuscules ! ")
     errorLast.classList.add('ajoutError')
     last.classList.add("modal-shadow-invalid")
-    
+  
   } 
 })
 //Evenement de first Validation --> Ajout et suppression de classe
@@ -132,13 +111,11 @@ champEmail.addEventListener('invalid',() => {
     champEmail.classList.remove('modal-shadow-invalid')
     champEmail.classList.add('modal-shadow-valid')
     errorEmail.innerHTML = ""
-
   } else {
     champEmail.classList.remove('modal-shadow-valid')
     champEmail.classList.add('modal-shadow-invalid')
     errorEmail.innerHTML = "Champ Email incorecte"
     errorEmail.classList.add('ajoutError')
-
   }
 })
 
