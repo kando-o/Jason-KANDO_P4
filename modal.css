@@ -80,8 +80,6 @@ img {
     text-align: left;
   }
 }
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -499,11 +497,11 @@ footer {
   }
 }
 @media screen and (max-width: 550px) {
- .bground{
-   padding: .5px 1.5rem
+ 
+  .bground{
+   padding: .5px 1.5rem;
  }
-};
-  
+}
 @media screen and (max-width: 450px) {
   
   main{
@@ -524,6 +522,7 @@ footer {
   }
 }
 @media screen and  (max-width: 361px) {
+  
   .bground{
     padding: .5px 1rem;
   }
@@ -542,6 +541,7 @@ footer {
     color: red;
 }
 @media screen and (max-width: 320px) {
+  
   .checkbox-label:nth-child(8) {
   position: relative;
   right: 14%;  
@@ -550,7 +550,7 @@ footer {
     position: relative;
     left: 18%;
   }
-  }
+}
   
 @keyframes modalopen {
   from {
