@@ -50,16 +50,24 @@
           je m'inscris
         </button>
       </div>
+      
+      <div class="bground-modal-merci">
+        <div class="content-modal-form_merci">
+          <span class="close-modal-merci"></span>
+          <p>Votre forulaire a bien été pris en compte</p>
+          <button class="btn-submit btn-merci">Merci</button>
+        </div>
+      </div>
       <div class="bground">
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form
-              name="reserve"
-              action="index.html"
-              method="get"
-              >
-              <!-- onsubmit="return validate();" -->
+            <form id="formulaire"
+            name="reserve"
+            action="index.html"
+            method="get">  
+            <!-- onsubmit="return validate();" -->
+            
               
               <div
                 class="formData">
@@ -69,8 +77,7 @@
                   type="text"
                   id="first"
                   name="first"
-                  required minlength="2"
-                  pattern="[A-Za-z-]+"
+                  required
                 /><br>
                 <div class="error_first"></div>
               </div>
@@ -82,8 +89,7 @@
                   type="text"
                   id="last"
                   name="last"
-                  required minlength="2"
-                  pattern="[A-Za-z-]+"
+                  required
                 /><br>
                 <div class="error_last"></div>
               </div>
@@ -95,7 +101,7 @@
                   type="email"
                   id="email"
                   name="email"
-                  required minlength="2"
+                  required
                 /><br>
                 <div class="error_email"></div>
               </div>
@@ -198,10 +204,11 @@
                   id="checkbox12"
                 />
                 <br>
-                <input class="checkbox-input" type="checkbox" id="checkbox1" required checked />
+                <input class="checkbox-input" type="checkbox" id="checkbox1" required  />
                 <label class="checkbox2-label" for="checkbox1" >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
+                  <span class="error_checkbox1"></span>
                 </label>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />

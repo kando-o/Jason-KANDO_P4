@@ -98,7 +98,7 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
+  z-index: 2 ;
 }
 .modal-btn {
   font-size: 145%;
@@ -138,13 +138,13 @@ main {
 .bground {
   display: none;
   position: fixed;
-  z-index: 1;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+  z-index: 3;
 }
 .content {
   margin: 5% auto;
@@ -158,6 +158,64 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+.bground-modal-merci{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgba(26, 39, 156, 0.4);
+  overflow: auto;
+  z-index: 5;
+}
+.content-modal-form_merci{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 45rem;
+  border: solid black 1px;
+  border-radius: 2rem;
+  background: #000;
+
+}
+.close-modal-merci{
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  right: 2rem;
+  top: 2rem;
+  color: white;
+  transform: scale(1.7) ;
+  cursor: pointer;
+}
+.close-modal-merci:before,
+.close-modal-merci:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 1.3rem;
+  width: 2px;
+  background-color: #fff;
+}
+.close-modal-merci:before {
+  transform: rotate(45deg);
+}
+.close-modal-merci:after {
+  transform: rotate(-45deg);
+}
+.content-modal-form_merci p{
+  text-align: center;
+  position: relative;
+  top: 25rem;
+  color: white;
+}
+.content-modal-form_merci button{
+  position: relative;
+  top: 35rem;
 }
 .modal-body {
   padding: 15px 8%;
@@ -192,6 +250,12 @@ input {
 .ajoutError{
   padding: .5rem;
   color: red;
+  width: 100%;
+  font-size: 20px;
+}
+.ajoutValid{
+  padding: .5rem;
+  color: green;
   width: 100%;
   font-size: 20px;
 }
@@ -319,6 +383,9 @@ input[data-error]::after {
   color: #fff;
   cursor: pointer;
   border: 0;
+}
+.btn-submit::after{
+  border: white solid 1px;
 }
 /* custom select styles */
 .custom-select {
