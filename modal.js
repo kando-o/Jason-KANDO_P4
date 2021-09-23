@@ -70,7 +70,7 @@ function validFirst01(inputFirst) {
   }else if (!/[A-Z]/g.test(inputFirst.value)) {
     console.log('Champ first maj');
     msgFirst = "Il manque une majuscule"
-  } else if( inputFirst.value.length <= 0 ) {
+  } else if( inputFirst.value.length <= 3 ) {
     console.log("champ first vide");
     msgFirst = "Veuillez mettre plus de 2 lettres contenant des lettres miniscules et majuscules !"
   }else {
@@ -114,7 +114,7 @@ validLast01(this)
   }else if (!/[A-Z]/g.test(inputLast.value)) {
   console.log('Champ last maj');
   msgLast = "Il manque une majuscule"
-  } else if( inputLast.value.length <= 0 ) {
+  } else if( inputLast.value.length <= 3 ) {
   console.log("champ last vide");
   msgLast = "Veuillez mettre plus de 2 lettres contenant des lettres miniscules et majuscules !"
   }else {
@@ -148,7 +148,7 @@ formulaire.addEventListener('submit', function(e) {
   if (validLast01(last) && validFirst01(first)) {
     console.log("form champ first ok");
     modalBgMerci.style.display = "block"
-    formulaire.style.display = "none"
+    modalbg.style.display = "none"
   } else {
     console.log("form champ first nok");
     alert("Nok")
