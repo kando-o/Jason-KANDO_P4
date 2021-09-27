@@ -15,7 +15,7 @@ const formulaire = document.getElementById('formulaire');
 const first = document.getElementById("first");
 const last = document.getElementById("last");
 const champEmail = document.getElementById('email');
-const champBirthdate = document.getElementById('birthdate')
+const champdate = document.getElementById('birthdate')
 const champQuantity = document.getElementById('quantity')
 const errorFirst = document.querySelector('.error_first')
 const errorLast = document.querySelector('.error_last')
@@ -45,11 +45,8 @@ close.addEventListener('click', () => {
   // alert('Etes vous sur') /**Message teste */
   modalbg.style.display = "none"
   modalBgMerci.style.display = "none"
-
 })
-
 //   ******* Début de validation du fromulaire + RegExp **********
-
   // Écoute de l'événement *First* au changement de focus
 first.addEventListener('change', function() {
   validFirst01(this)
@@ -67,13 +64,13 @@ function validFirst01(inputFirst) {
   } else if (/[0-9]/g.test(inputFirst.value)) {
     console.log('Champ first chiffre');
     msgFirst = "Ne doit pas contenir de chiffre"
-  }else if (!/[A-Z]/g.test(inputFirst.value)) {
+  } else if (!/[A-Z]/g.test(inputFirst.value)) {
     console.log('Champ first maj');
     msgFirst = "Il manque une majuscule"
-  } else if( inputFirst.value.length <= 3 ) {
+  } else if( inputFirst.value.length < 3 ) {
     console.log("champ first vide");
     msgFirst = "Veuillez mettre plus de 2 lettres contenant des lettres miniscules et majuscules !"
-  }else {
+  } else {
     console.log('regExp First ok');
     validFirst = true //Quand validFirst *True* déclanche la dernier condition pour la validation du champ
     errorFirst.innerHTML = "Good"
@@ -104,23 +101,23 @@ validLast01(this)
   errorLast.innerHTML = msgLast; // contenu des différant msgLast injecter dans errorLast
   console.log(inputLast.value);
   validLast = false; //validLast *false natif*
-  // **** début RegExp ****
+  //       **** Début RegExp ****
   if (!/[a-z]/g.test(inputLast.value)) {
   console.log('Champ last minu');
   msgLast = "Il manque une miniscules  !"
   } else if (/[0-9]/g.test(inputLast.value)) {
   console.log('Champ last chiffre');
   msgLast = "Ne doit pas contenir de chiffre"
-  }else if (!/[A-Z]/g.test(inputLast.value)) {
+  } else if (!/[A-Z]/g.test(inputLast.value)) {
   console.log('Champ last maj');
   msgLast = "Il manque une majuscule"
-  } else if( inputLast.value.length <= 3 ) {
+  } else if( inputLast.value.length < 3 ) {
   console.log("champ last vide");
   msgLast = "Veuillez mettre plus de 2 lettres contenant des lettres miniscules et majuscules !"
-  }else {
+  } else {
   console.log('regExp Last ok');
   validLast = true //Quand validLast *True* déclanche la dernier condition pour la validation du champ
-  msgLast = " Ok !"
+  msgLast = ""
   }
   // Validation + ajout des classes et message d'erreur
   if (validLast == true) {
@@ -136,31 +133,33 @@ validLast01(this)
   last.classList.remove("modal-shadow-valid")
   last.classList.add("modal-shadow-invalid")
   errorLast.classList.add("ajoutError")
+  return false
   }
 }
+// Événement sur le formulaire ! Bloc l'envoi du formulaire if = true / else = false
+formulaire.addEventListener('submit', function(e) {
+  e.preventDefault()
+  if (validLast01(last) && validFirst01(first)) {
+    console.log("form champ First/Last");
+    modalBgMerci.style.display = "block"
+    modalbg.style.display = "none"
+  } else {
+    console.log("form champ First/Last nok");
+    alert("Formulaire non valide")
+  }
+})
+// Événement sur le *btnMerci* ! Envoie le formulaire et ferme la modalMerci
 btnMerci.addEventListener('click', function (){
 formulaire.submit()
 modalBgMerci.style.display = "none"
 })
-// Événement sur le formulaire block l'envoi tant que if/else not * true *
-formulaire.addEventListener('submit', function(e) {
-  e.preventDefault()
-  if (validLast01(last) && validFirst01(first)) {
-    console.log("form champ first ok");
-    modalBgMerci.style.display = "block"
-    modalbg.style.display = "none"
-  } else {
-    console.log("form champ first nok");
-    alert("Nok")
-  }
-})
-// Événement *btnMerci* ferme modal merci et envoi le formulaire
+// Événement *btnMerci* ferme la modalMerci
 closeModalMerci.addEventListener('click', () =>{
   console.log("close merci");
   modalBgMerci.style.display = "none"
-
 })
 
+// Fonction pour les champ *Email* *Date* *Quantité* et *Ville*
 function form5() {
 //Evenement de ChampEmail Validation --> Ajout et suppression de classe
 champEmail.addEventListener('input', () => {
@@ -178,18 +177,21 @@ champEmail.addEventListener('input', () => {
   }
 })
 //Evenement de ChampDate Validation --> Ajout et suppression de classe
-champBirthdate.addEventListener('invalid', () => {
-  if (champBirthdate.validity.valid) {
+console.log(champdate.value);
+
+champdate.addEventListener('click', () => {
+  if (champdate.validity.valid == true) {
     console.log("Good Date");
+    console.log(champdate.validity.valid);
     errorDate.innerHTML = ""
-    champBirthdate.classList.remove('modal-shadow-invalid')
-    champBirthdate.classList.add('modal-shadow-valid')
+    champdate.classList.remove('modal-shadow-invalid')
+    champdate.classList.add('modal-shadow-valid')
   } else {
-    console.log("Bad Date");
-    console.log('Bad date');
+    console.log('Bad date');   
+    console.log(champdate.validity.valid);
     errorDate.innerHTML = " Date non communiquer ou non correct !! ";
-    champBirthdate.classList.remove('modal-shadow-valid')
-    champBirthdate.classList.add('modal-shadow-invalid')
+    champdate.classList.remove('modal-shadow-valid')
+    champdate.classList.add('modal-shadow-invalid')
     errorDate.classList.add('ajoutError')
   }
 })
@@ -207,7 +209,7 @@ champQuantity.addEventListener('invalid', () => {
     champQuantity.classList.remove('modal-shadow-invalid')
     champQuantity.classList.add('modal-shadow-valid')
   }
-});
+});//Evenement de ChampQuantity Validation --> Ajout et suppression de classe
 champQuantity.addEventListener('input', () => {
   if( champQuantity.validity.valid) {
     console.log("Quantity Ok");
@@ -217,13 +219,20 @@ champQuantity.addEventListener('input', () => {
   }
 })
 }
-checkbBox2Label.addEventListener('change', (e) => {
-  console.log(checkbBox2Label.e);
-  console.log(checkbBox2Label);
-  if ( checkbBox2Label === '' ){
-    errorCheckBox1.innerHTML = "Test Test"
-    
+// Fonction pour condition d'utilisation 
+const  condition = document.getElementById('checkbox1')
+const cocher055 = document.querySelector("input[value = 'cocher055']")
+condition.addEventListener('click', () => {
+  console.log(cocher055.checked);
+  if (cocher055.checked) {
+    console.log("Case des conditions cocher");
+    errorCheckBox1.innerHTML = ""
+  } else {
+    errorCheckBox1.innerHTML = " Vous n'avez pas chocher la case des conditions"
+    errorCheckBox1.classList.add('ajoutError')
   }
 })
-//Evenement au click du bouton envoyer
+//Evenement au click du bouton envoyer pour le formulaire
 formulaire.addEventListener('click', form5)
+
+

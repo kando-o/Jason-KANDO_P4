@@ -251,13 +251,13 @@ input {
   padding: .5rem;
   color: red;
   width: 100%;
-  font-size: 20px;
+  font-size: 17px;
 }
 .ajoutValid{
   padding: .5rem;
   color: green;
   width: 100%;
-  font-size: 20px;
+  font-size: 15px;
 }
 .formData[data-error]::after {
   content: attr(data-error);
