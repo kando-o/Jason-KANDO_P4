@@ -6,7 +6,7 @@ function editNav() {
     x.className = "topnav";
   }
 }
-// DOM Elements
+// Déclaration élements du dom
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalBgMerci = document.querySelector('.bground-modal-merci')
@@ -108,9 +108,6 @@ validLast01(this)
   } else if (/[0-9]/g.test(inputLast.value)) {
   console.log('Champ last chiffre');
   msgLast = "Ne doit pas contenir de chiffre"
-  } else if (!/[A-Z]/g.test(inputLast.value)) {
-  console.log('Champ last maj');
-  msgLast = "Il manque une majuscule"
   } else if( inputLast.value.length < 3 ) {
   console.log("champ last vide");
   msgLast = "Veuillez mettre plus de 2 lettres contenant des lettres miniscules et majuscules !"
