@@ -173,11 +173,10 @@ main {
 }
 .content-modal-form_merci{
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   max-width: 500px;
-  margin: 0 auto;
+  margin: 3rem auto;
   height: 45rem;
-  border: solid black 1px;
   border-radius: 2rem;
   background: #000;
 
@@ -217,6 +216,25 @@ main {
   position: relative;
   top: 35rem;
 }
+@media screen and (max-width: 510px) {  
+
+  .content-modal-form_merci{
+    position: relative;
+    margin: 3rem 1.5rem;
+    height: 40rem;
+    border-radius: 2rem;
+    background: #000;
+  }
+  .content-modal-form_merci p{
+    position: relative;
+    top: 20rem;
+  }
+  .content-modal-form_merci button {
+    position: relative;
+    top: 30rem;
+  }
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;

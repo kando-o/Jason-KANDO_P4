@@ -156,6 +156,7 @@ modalBgMerci.style.display = "none"
 // Événement *btnMerci* ferme la modalMerci
 closeModalMerci.addEventListener('click', () =>{
   console.log("close merci");
+  formulaire.submit()
   modalBgMerci.style.display = "none"
 })
 
